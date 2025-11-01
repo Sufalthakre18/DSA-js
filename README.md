@@ -1,2 +1,2 @@
 # weather-dashboard
-here is weather app using react
+here is weather app using react.
