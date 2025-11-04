@@ -1,0 +1,81 @@
+body {
+    font-family: 'Verdana', sans-serif; /* A very common, standard font */
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+main {
+    width: 60%; 
+    margin: 40px auto; 
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+    border-bottom: 2px solid #6e0000;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+.addTask {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+.addTask input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+.addTask button {
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.addTask button:hover {
+    background-color: #999;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+li div {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+
+li div h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #555;
+    border-bottom: none; 
+}
+
+li button {
+    background: #d9534f;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+li button:hover {
+    background-color: #2a0302;
+}
