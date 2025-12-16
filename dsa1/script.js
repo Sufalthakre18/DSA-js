@@ -50,5 +50,135 @@
 // }
 // if (amount===1) {
 //     console.log("1 ke note : "+amount);
+
+// }
+
+// -------------------------------------------------------------
+
+// FOR LOOP
+
+// let pr = prompt("Enter number to print sum till number : ")
+// if (pr == null) {
+//     console.log("cancel program");
+// } else {
+//     let n = Number(pr)
+//     if (isNaN(n)) {
+//         console.log("Invalid input");
+//     } else {
+//         if (n > 0) {
+            // for(let i=1;i<=Math.floor(n);i++){
+            //     if(n%i==0){
+            //         console.log(i);
+            //     }
+            // }  // This is non optimized code 
+            // ---------------------------
+            // for(let i=1;i<=Math.floor(n/2);i++){
+            //     if(n%i==0){
+            //         console.log(i);
+            //     }
+            // }
+            
+            // console.log(n); // optimized code
+
+            // console.log(isPrime(n));
+            // --------------------
+            // let sum=0;
+            // while(n>0){
+            //     let rem=n%10
+            //     sum+=rem
+            //     n=Math.floor(n/10)
+            // }
+            // console.log(sum);
+            // ----------------------------
+            // let rev=0;
+            // while(n>0){
+            //     var rim=n%10;
+            //     rev=rev*10+rim;
+            //     n=Math.floor(n/10);
+            // }
+            // console.log(rev);
+            // ----------------------------
+            // var sum=0;
+            // var copy=n;
+            // while(n>0){
+            //     let rem=n%10;
+            //     let fact=1;
+            //     for(let i=1;i<=rem;i++){
+            //         fact*=i;
+            //     }
+            //     sum=sum+fact;
+            //     n=Math.floor(n/10);
+            // }
+            // if (copy===sum){
+            //     console.log("strong");
+            // }
+            // else {
+            //     console.log("not a strong number");
+            // }
+            
+
+            
+//         }
+//         else{
+//             console.log("number should be positive and greater than 0");
+            
+//         }
+//     }
+// }
+// ------------------
+// optimized code 
+// function isPrime(n){
+//     if(n<=1)return false;
+//     if(n==2)return true;
+//     if(n%2==0)return false;
+//     for(let i=3;i<=Math.sqrt(n);i+=2){
+//         if(n%i==0)return false;
+//     }
+//     return true;
+// }
+
+
+// ------------------
+// optimized code 
+// let n= +prompt("Enter a number")
+// if(n<1 || isNaN(n)) console.log("Invalid input or should be positive ");
+// else{
+//     let fact=1;
+//     while (n>1) fact*=n--;
+//     console.log("fact is :- ",fact);
     
 // }
+// ------------------------------------------
+
+// let random=Math.floor(Math.random()*100)+1;
+
+// let guess=-1;
+// let attempt=0;
+// while (guess!==random) {
+
+//     if(attempt<=5){
+//        guess=Number(prompt("Guess the number from 1 to 100"));
+//     if(isNaN(guess)|| guess<1||guess>100){
+//         console.log("try again b/t 1-100");
+//         continue
+//     }
+//     if (guess>random) {
+//         console.log("too high! try again and attempt is ",attempt);
+//     }else if(guess<random){
+//         console.log("too low! try again and attempt is ",attempt);
+//     }else{
+//         console.log("congrats!🎉🎉🎉The number was ",guess);
+        
+//     } 
+    
+    
+//     attempt+=1;
+//     }
+// }
+
+// ------------------------
+
+
+// PATTERN PROGRAM
+
+
