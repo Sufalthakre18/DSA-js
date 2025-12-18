@@ -66,62 +66,62 @@
 //         console.log("Invalid input");
 //     } else {
 //         if (n > 0) {
-            // for(let i=1;i<=Math.floor(n);i++){
-            //     if(n%i==0){
-            //         console.log(i);
-            //     }
-            // }  // This is non optimized code 
-            // ---------------------------
-            // for(let i=1;i<=Math.floor(n/2);i++){
-            //     if(n%i==0){
-            //         console.log(i);
-            //     }
-            // }
-            
-            // console.log(n); // optimized code
+// for(let i=1;i<=Math.floor(n);i++){
+//     if(n%i==0){
+//         console.log(i);
+//     }
+// }  // This is non optimized code 
+// ---------------------------
+// for(let i=1;i<=Math.floor(n/2);i++){
+//     if(n%i==0){
+//         console.log(i);
+//     }
+// }
 
-            // console.log(isPrime(n));
-            // --------------------
-            // let sum=0;
-            // while(n>0){
-            //     let rem=n%10
-            //     sum+=rem
-            //     n=Math.floor(n/10)
-            // }
-            // console.log(sum);
-            // ----------------------------
-            // let rev=0;
-            // while(n>0){
-            //     var rim=n%10;
-            //     rev=rev*10+rim;
-            //     n=Math.floor(n/10);
-            // }
-            // console.log(rev);
-            // ----------------------------
-            // var sum=0;
-            // var copy=n;
-            // while(n>0){
-            //     let rem=n%10;
-            //     let fact=1;
-            //     for(let i=1;i<=rem;i++){
-            //         fact*=i;
-            //     }
-            //     sum=sum+fact;
-            //     n=Math.floor(n/10);
-            // }
-            // if (copy===sum){
-            //     console.log("strong");
-            // }
-            // else {
-            //     console.log("not a strong number");
-            // }
-            
+// console.log(n); // optimized code
 
-            
+// console.log(isPrime(n));
+// --------------------
+// let sum=0;
+// while(n>0){
+//     let rem=n%10
+//     sum+=rem
+//     n=Math.floor(n/10)
+// }
+// console.log(sum);
+// ----------------------------
+// let rev=0;
+// while(n>0){
+//     var rim=n%10;
+//     rev=rev*10+rim;
+//     n=Math.floor(n/10);
+// }
+// console.log(rev);
+// ----------------------------
+// var sum=0;
+// var copy=n;
+// while(n>0){
+//     let rem=n%10;
+//     let fact=1;
+//     for(let i=1;i<=rem;i++){
+//         fact*=i;
+//     }
+//     sum=sum+fact;
+//     n=Math.floor(n/10);
+// }
+// if (copy===sum){
+//     console.log("strong");
+// }
+// else {
+//     console.log("not a strong number");
+// }
+
+
+
 //         }
 //         else{
 //             console.log("number should be positive and greater than 0");
-            
+
 //         }
 //     }
 // }
@@ -146,7 +146,7 @@
 //     let fact=1;
 //     while (n>1) fact*=n--;
 //     console.log("fact is :- ",fact);
-    
+
 // }
 // ------------------------------------------
 
@@ -168,10 +168,10 @@
 //         console.log("too low! try again and attempt is ",attempt);
 //     }else{
 //         console.log("congrats!🎉🎉🎉The number was ",guess);
-        
+
 //     } 
-    
-    
+
+
 //     attempt+=1;
 //     }
 // }
@@ -181,4 +181,38 @@
 
 // PATTERN PROGRAM
 
+// let n=6;
+// for(let i=1;i<=n;i++){
+//     let aschii=65;
+//     for(let j=1;j<=n-i+1;j++){
+//     process.stdout.write(String.fromCharCode(aschii)+' ')
+//     aschii++;
+//     }
+//     console.log();
+// }
 
+
+// let n=5;
+// for(let i=1;i<=n;i++){
+//     for(let j=1;j<=n-i;j++){
+//         process.stdout.write(" ")
+//     }
+//     for(let j=1;j<=i;j++){
+//         process.stdout.write("O")
+//     }
+//     console.log();
+// }
+
+// let n=5;
+// for(i=1;i<=n;i++){
+//     for(j=1;j<=2*n-1;j++){
+//         if (i==j || i+j==2*n) {
+//             process.stdout.write("*")
+//         }else{
+//             process.stdout.write(" ")
+//         }
+//     }
+//     console.log()
+// }
+
+// ---------------------------

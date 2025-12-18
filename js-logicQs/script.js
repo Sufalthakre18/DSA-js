@@ -149,15 +149,15 @@
 
 // Fibonacci Sequence: Write a function fibonacci(n) that returns an array of the first n Fibonacci numbers (starting with 0, 1).
 
-function fibonacci(n){
-    if (n === 1) return [0];
-    if (n === 2) return [0, 1];
-    let fib=[0,1]
-    let result;
-    for(i=2;i<n;i++){
-        result=fib[i-1] +fib[i-2]
-        fib.push(result)
-    }
-    return fib
-}
-console.log(fibonacci(5)) // 0,1,1,2,3,5
+// function fibonacci(n){
+//     if (n === 1) return [0];
+//     if (n === 2) return [0, 1];
+//     let fib=[0,1]
+//     let result;
+//     for(i=2;i<n;i++){
+//         result=fib[i-1] +fib[i-2]
+//         fib.push(result)
+//     }
+//     return fib
+// }
+// console.log(fibonacci(5)) // 0,1,1,2,3,5
