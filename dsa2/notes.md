@@ -377,7 +377,7 @@ Very popular interview question.
 
 > **Short, high‑yield algorithms frequently asked in interviews**
 
-### 1️⃣ Second Maximum Element (Single Pass)
+### 1) Second Maximum Element (Single Pass)
 
 ```javascript
 let max = Math.max(arr[0], arr[1]);
@@ -397,7 +397,7 @@ for (let i = 2; i < arr.length; i++) {
 
 ---
 
-### 2️⃣ Reverse Array (Two Pointer)
+### 2️) Reverse Array (Two Pointer)
 
 ```javascript
 let i = 0, j = arr.length - 1;
@@ -411,7 +411,7 @@ while (i < j) {
 
 ---
 
-### 3️⃣ Segregate 0s and 1s
+### 3️) Segregate 0s and 1s
 
 ```javascript
 let i = 0, j = 0;
@@ -428,7 +428,7 @@ while (i < arr.length) {
 
 ---
 
-### 4️⃣ Left Shift Array by 1
+### 4️) Left Shift Array by 1
 
 ```javascript
 let first = arr[0];
@@ -442,7 +442,7 @@ arr[arr.length - 1] = first;
 
 ---
 
-### 5️⃣ Left Shift Array by K
+### 5️) Left Shift Array by K
 
 ```javascript
 k = k % arr.length;
@@ -470,6 +470,718 @@ for(let i=0;i<arr.length;i++){
 console.log(temp);
 ```
 
-**Pattern:** O(n) time complexity
+**Pattern:** O(n) time complexity but extra space
 
 ---
+
+#### efficient algorithm for left rotation by K
+```
+let arr=[1,2,3,4,5]
+
+let k=3;
+k=k%arr.length;
+
+reverse(0,k-1)
+reverse(k,arr.length-1)
+reverse(0,arr.length-1)
+
+console.log(arr);
+
+function reverse(i,j){
+    while(i<j){
+        let temp=arr[i]
+        arr[i]=arr[j]
+        arr[j]=temp;
+        i++;
+        j--
+    }
+}
+```
+---
+for right rotation just
+```
+reverse(0,arr.length-1)
+reverse(0,k-1)
+reverse(k,arr.length-1)
+```
+
+---
+### 6) remove duplicates from sorted Array;
+
+```
+
+let arr = [1, 1, 2, 3, 3,3,4,5,5,5];
+
+function removeDup() {
+    let j = 1;
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] !== arr[i + 1]) {
+            arr[j] = arr[i + 1];
+            j++; // 
+        }
+    }
+    return j; // new length
+}
+
+let len = removeDup();
+console.log(len);          
+console.log(arr.slice(0, len));
+
+```
+---
+### 7) merge sorted array
+
+```
+
+let arr1=[3,5,6,9]
+let arr2=[1,2,4,7,8]
+let merge= new Array(arr1.length+arr2.length)
+let i=j=k=0;
+
+while(i<arr1.length&& j<arr2.length){
+    if(arr1[i]<arr2[j]){
+        merge[k++]=arr1[i++]
+    }else{
+        merge[k++]=arr2[j++]
+    }
+}
+
+while(j<arr2.length){
+    merge[k++]=arr2[j++]
+}
+while(i<arr1.length){
+    merge[k++]=arr1[i++]
+}
+
+console.log(merge);
+```
+
+---
+### 8) kadane's algorithm/ Maximum subarray
+
+```
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    let max=-Infinity;
+    let sum =0;
+    for(let i=0; i<nums.length;i++){
+        sum+=nums[i];
+        max=Math.max(max,sum)
+        if(sum<0) sum=0;
+        
+    }
+    return max;
+};
+```
+---
+### 9) moore's algorithm/ majority element
+
+```
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    let ans = nums[0];
+    let count = 1;
+
+    for (let i = 1; i < nums.length; i++) {
+        if (count === 0) {
+            ans = nums[i];
+            count = 1;
+        } else if (nums[i] === ans) {
+            count++;
+        } else {
+            count--;
+        }
+    }
+    return ans;
+};
+
+```
+
+---
+
+# Strings — Complete DSA Guide (JavaScript)
+
+## 1. What is a String? (DSA View)
+
+A string is a **sequence of characters** stored in **contiguous memory**.
+In JavaScript, strings are **immutable** (cannot be changed in place).
+
+```js
+let s = "hello";
+```
+
+**Important:** Any modification creates a **new string**.
+
+---
+
+## 3. String vs Character Array
+
+| Feature      | String      | Char Array |
+| ------------ | ----------- | ---------- |
+| Mutability   | ❌ Immutable | ✅ Mutable  |
+| Index Access | ✅           | ✅          |
+| Modification | Costly      | Easy       |
+
+Interview Tip: Convert string → array when frequent updates are needed.
+
+---
+
+## 4. Basic String Traversal
+
+```js
+for (let i = 0; i < s.length; i++) {
+  console.log(s[i]);
+}
+```
+
+Or:
+
+```js
+for (let ch of s) console.log(ch);
+```
+
+---
+
+## 5. Reverse a String (Classic)
+
+```js
+let rev = "";
+for (let i = s.length - 1; i >= 0; i--) {
+  rev += s[i];
+}
+```
+
+Pattern: backward traversal.
+
+---
+
+## 6. Palindrome Check (Two Pointer)
+
+```js
+let i = 0, j = s.length - 1;
+let isPal = true;
+
+while (i < j) {
+  if (s[i] !== s[j]) {
+    isPal = false;
+    break;
+  }
+  i++; j--;
+}
+```
+
+Interview favorite.
+
+---
+
+## 7. Count Vowels & Consonants
+
+```js
+let vowels = "aeiou";
+let count = 0;
+
+for (let ch of s.toLowerCase()) {
+  if (vowels.includes(ch)) count++;
+}
+```
+
+---
+
+## 8. Character Frequency Map (VERY IMPORTANT)
+
+```js
+let freq = {};
+for (let ch of s) {
+  freq[ch] = (freq[ch] || 0) + 1;
+}
+```
+
+Used in:
+
+* Anagrams
+* First unique character
+* Majority‑type problems
+
+---
+
+## 9. Check Anagram (Core DSA Pattern)
+
+```js
+function isAnagram(a, b) {
+  if (a.length !== b.length) return false;
+
+  let map = {};
+  for (let ch of a) map[ch] = (map[ch] || 0) + 1;
+
+  for (let ch of b) {
+    if (!map[ch]) return false;
+    map[ch]--;
+  }
+  return true;
+}
+```
+
+---
+
+## 10. First Non‑Repeating Character
+
+```js
+let freq = {};
+for (let ch of s) freq[ch] = (freq[ch] || 0) + 1;
+
+for (let ch of s) {
+  if (freq[ch] === 1) {
+    console.log(ch);
+    break;
+  }
+}
+```
+
+---
+
+## 11. Remove Duplicate Characters
+
+```js
+let seen = {};
+let res = "";
+
+for (let ch of s) {
+  if (!seen[ch]) {
+    seen[ch] = true;
+    res += ch;
+  }
+}
+```
+
+---
+
+## 12. Count Words in a String
+
+```js
+let words = s.trim().split(/\s+/);
+console.log(words.length);
+```
+
+---
+
+## 13. Longest Word in a Sentence
+
+```js
+let arr = s.split(" ");
+let longest = "";
+
+for (let word of arr) {
+  if (word.length > longest.length)
+    longest = word;
+}
+```
+
+---
+
+## 14. String Compression (Basic)
+
+```js
+let res = "";
+let count = 1;
+
+for (let i = 1; i <= s.length; i++) {
+  if (s[i] === s[i - 1]) count++;
+  else {
+    res += s[i - 1] + count;
+    count = 1;
+  }
+}
+```
+
+---
+
+## 15. Substring vs Subsequence (Concept)
+
+* **Substring:** continuous
+* **Subsequence:** order preserved, gaps allowed
+
+Interview theory question.
+
+---
+
+## 16. Valid Palindrome (Ignoring Non‑Alphanumeric)
+
+```js
+let str = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+let i = 0, j = str.length - 1;
+
+while (i < j) {
+  if (str[i++] !== str[j--]) return false;
+}
+return true;
+```
+
+---
+
+## 17. String to Number (atoi logic)
+
+```js
+let num = 0;
+for (let ch of s) {
+  num = num * 10 + (ch - '0');
+}
+```
+
+---
+
+## 18. Time Complexity Notes
+
+* Traversal → `O(n)`
+* Nested loops → `O(n²)`
+* Frequency map → `O(n)`
+
+---
+
+## 19. Common Mistakes in Strings
+
+❌ Forgetting immutability
+❌ Using nested loops blindly
+❌ Not handling spaces/case
+❌ Ignoring edge cases ("", single char)
+
+---
+
+## 20.  Important String Algorithms (Quick Revision)
+---
+
+### 1️⃣ Toggle Case of a String (ASCII Technique)
+
+```js
+let S = "AjsjfhgeAJ";
+let toggle = "";
+
+for (let i = 0; i < S.length; i++) {
+  let ch = S.charCodeAt(i);
+  if (ch >= 65 && ch <= 90) {
+    toggle += String.fromCharCode(ch + 32);
+  } else if (ch >= 97 && ch <= 122) {
+    toggle += String.fromCharCode(ch - 32);
+  }
+}
+```
+
+**DSA Name:** Toggle Case Algorithm using ASCII
+**Pattern:** Character manipulation + traversal
+
+---
+
+### 2️⃣ Character Frequency Count (ASCII Frequency Array)
+
+```js
+let S = "AjsjfhgeAJ";
+let freq = new Array(128).fill(0);
+
+for (let i = 0; i < S.length; i++) {
+  let idx = S.charCodeAt(i);
+  freq[idx]++;
+}
+
+for (let i = 0; i < freq.length; i++) {
+  if (freq[i] > 0) {
+    console.log(String.fromCharCode(i) + " appears " + freq[i] + " times");
+  }
+}
+```
+
+**DSA Name:** Character Frequency Counting using ASCII Array
+**Pattern:** Counting / hashing technique
+
+---
+
+# Time & Space Complexity — World‑Class DSA Notes (JavaScript)
+---
+## 1. Why Time & Space Complexity REALLY Matters
+
+In real interviews and real systems:
+
+* Input size can be **millions or billions**
+* Code that works can still be **rejected** if inefficient
+
+**DSA is not about code working — it’s about code scaling.**
+
+---
+
+## 2. What Time Complexity Actually Measures
+
+❌ NOT execution time in seconds
+✅ **Growth rate of operations with respect to input size (n)**
+
+Example:
+
+```js
+for (let i = 0; i < n; i++) {
+  console.log(i);
+}
+```
+
+* Runs `n` times
+* Time complexity = **O(n)**
+
+Machine speed, language, OS do NOT matter.
+
+---
+
+## 3. What Space Complexity Actually Measures
+
+Space Complexity =
+
+* Extra memory used by algorithm
+* Includes variables, arrays, recursion stack
+
+Example:
+
+```js
+let sum = 0; // O(1) space
+```
+
+```js
+let arr = new Array(n); // O(n) space
+```
+
+⚠ Input space is NOT counted — only **extra space**.
+
+---
+
+## 4. Big‑O, Big‑Ω, Big‑Θ (ADVANCED but IMPORTANT)
+
+### Big‑O (Worst Case) — MOST IMPORTANT
+
+* Upper bound
+* Used in interviews
+
+### Big‑Ω (Best Case)
+
+* Rarely discussed in interviews
+
+### Big‑Θ (Average / Tight Bound)
+
+* When best & worst are same
+
+Example:
+
+```js
+for (let i = 0; i < n; i++) {
+  console.log(i);
+}
+```
+
+* O(n), Ω(n), Θ(n)
+
+---
+
+## 5. Common Time Complexities (With Meaning)
+
+| Complexity | Meaning           | Example              |
+| ---------- | ----------------- | -------------------- |
+| O(1)       | Constant          | Access array element |
+| O(log n)   | Divide problem    | Binary search        |
+| O(n)       | Linear            | Loop over array      |
+| O(n log n) | Efficient sorting | Merge sort           |
+| O(n²)      | Nested loops      | Pair checking        |
+| O(2ⁿ)      | Exponential       | Brute recursion      |
+| O(n!)      | Factorial         | Permutations         |
+
+---
+
+## 6. Advanced Rule: Drop Constants & Lower Terms
+
+```js
+for (let i = 0; i < n; i++) {}
+for (let j = 0; j < n; j++) {}
+```
+
+❌ O(2n)
+✅ **O(n)**
+
+```js
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < n; j++) {}
+}
+```
+
+✅ **O(n²)**
+
+---
+
+## 7. Amortized Time Complexity (VERY IMPORTANT)
+
+Some operations look costly but are cheap on average.
+
+Example: `push()` in JS arrays
+
+* Occasionally O(n)
+* Average = **O(1) amortized**
+
+Used heavily in:
+
+* Dynamic arrays
+* Stack implementations
+
+---
+
+## 8. Recursion & Space Complexity (ADVANCED)
+
+```js
+function fact(n) {
+  if (n === 1) return 1;
+  return n * fact(n - 1);
+}
+```
+
+* Time = O(n)
+* Space = **O(n)** (call stack)
+
+⚠ Even without extra variables, recursion uses memory.
+
+---
+
+## 9. Two‑Pointer & Sliding Window Impact
+
+```js
+let i = 0, j = n - 1;
+while (i < j) {
+  i++; j--;
+}
+```
+
+* NOT O(n²)
+* Still **O(n)**
+
+Understanding pointer movement is key in interviews.
+
+---
+
+## 10. Hidden Space Costs (MOST PEOPLE MISS THIS)
+
+```js
+let str = "hello";
+str = str + "a";
+```
+
+Strings are immutable → new memory created
+
+Time = O(n)
+Space = O(n)
+
+---
+
+## 11. In‑Place vs Extra Space
+
+### In‑Place Algorithm
+
+* Uses constant extra space
+* Preferred in interviews
+
+Example:
+
+```js
+reverseArray(arr);
+```
+
+### Extra Space Algorithm
+
+* Easier but memory heavy
+
+```js
+let newArr = [...arr];
+```
+
+---
+
+## 12. How to Analyze Any Code (INTERVIEW FRAMEWORK)
+
+Ask yourself:
+
+1. How many loops?
+2. Nested or sequential?
+3. Is input reduced each step?
+4. Any recursion?
+5. Any extra data structure?
+
+This framework = **90% correct analysis**.
+
+---
+## TLE (Time Limit Exceeded) — Short & Important DSA Notes
+
+## What is TLE?
+
+**TLE (Time Limit Exceeded)** occurs when an algorithm takes **more time than allowed** to execute for large inputs.
+
+In simple words:
+
+> Code is correct ❌ but **too slow** ❌
+
+---
+
+## Why TLE Happens
+
+1. ❌ Wrong Time Complexity
+
+   * Using O(n²) when n is large
+   * Using exponential recursion
+
+2. ❌ Nested Loops without need
+
+3. ❌ Repeated unnecessary work
+
+   * Recalculating same values
+
+4. ❌ Language-specific issues (JavaScript)
+
+   * String concatenation inside loops
+   * Using `shift()` / `unshift()` repeatedly
+
+---
+
+## Practical Limits (Interview MUST-KNOW)
+
+Approx operations per second ≈ **10⁷ – 10⁸**
+
+| Input Size (n) | Safe Complexity    |
+| -------------- | ------------------ |
+| ≤ 10⁵          | O(n), O(n log n) ✅ |
+| ≤ 10⁴          | O(n²) ⚠️           |
+| ≤ 20           | O(2ⁿ) ⚠️           |
+| ≤ 10           | O(n!) ❌            |
+
+---
+
+## Common TLE Example
+
+```js
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < n; j++) {
+    // heavy work
+  }
+}
+```
+
+For large n → **TLE guaranteed** ❌
+
+---
+
+## How to Avoid TLE
+
+✅ Use better approaches:
+
+* Hashing instead of nested loops
+* Two pointers
+* Sliding window
+* Precomputation
+* Early break / pruning
+
+---
+
+
