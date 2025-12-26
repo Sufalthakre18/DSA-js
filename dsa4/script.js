@@ -56,13 +56,13 @@
 // }
 // ----------------------------------
 
-// function fibbo(n){
+// function fibbo(n){  
 //     if(n==0||n==1) return n;
 //     return fibbo(n-1)+fibbo(n-2)
 // }
 
 // let n=10;
-// console.log(fibbo(5));
+// console.log(fibbo(5)); // O(2^n) time complexity
 // --------------------------------
 // MATHS COMMON PROBLEM 
 // FIND gcd 
@@ -261,3 +261,61 @@
 
 // ------------------------------------------
 
+// function printNum(n){
+//     if(n<1) return
+//     // console.log(n); // 10 to 0
+//     // printNum(n-1)
+
+    
+//     printNum(n-1)
+//     console.log(n); // 0 to 10 
+    
+// }
+// printNum(10)
+// ----------------------------------------------
+
+// function fact(n){
+//     if(n==1) return 1;
+//     return n*fact(n-1)
+// }
+// let result =fact(5)
+// console.log(result);
+
+// -----------------------------------------------
+// time Complexity - O(n)= space complexity
+// function sumOfN(n){
+//     if(n==1) return 1;
+//     return n + sumOfN(n-1)
+// }
+// let result= sumOfN(4)
+// console.log(result);
+// -------------------------------------------------
+
+// function nestedLoops (n) {
+// if ( n ===0) return;
+// for (let i = 0; i < n ;i++) {
+// console.log(i) ;
+// nestedLoops (n - 1) ;
+// }}
+
+// nestedLoops (2); // 0 0 1 0
+
+// ----------------------------------------------------
+// function sumDigits(n) {
+//     if (n < 10) return n;
+
+//     return (n % 10) + sumDigits (Math.floor(n / 10));
+
+// }
+
+
+// console.log(sumDigits(456));
+
+// -------------------------------------------------------
+// function gcd(a,b){
+//     if(b==0) return a;
+//     return gcd(b,a%b)
+// }
+// console.log(gcd(24,18))
+
+// ------------------------------

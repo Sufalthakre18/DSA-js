@@ -161,3 +161,6 @@
 //     return fib
 // }
 // console.log(fibonacci(5)) // 0,1,1,2,3,5
+
+
+
