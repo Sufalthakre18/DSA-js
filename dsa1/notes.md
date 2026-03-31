@@ -1603,3 +1603,11 @@ for (let i = 1; i <= n; i++) {
 ❌ No dry run
 
 ---
+## practice points for DSA1
+- Find GCD of Two Numbers (Euclidean Algorithm)
+- 15. Check Armstrong Number
+- 8. Frequency Count Algorithm
+- 9. Palindrome Check (Two-Pointer)
+- 6. Reverse Using Loop (Two-Pointer)
+- 24. Reverse a Number
+
