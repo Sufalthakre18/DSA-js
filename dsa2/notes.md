@@ -1183,5 +1183,16 @@ For large n → **TLE guaranteed** ❌
 * Early break / pruning
 
 ---
-
-
+# practice topics 
+- 15. Remove Duplicates (Unsorted Array) and 16. Remove Duplicates (Sorted Array — Two Pointer)
+- 17. Second Largest Element and 1) Second Maximum Element (Single Pass)
+- 19. Partition Array (Even–Odd)
+- 21. Kadane’s Algorithm (Intro Level) and  8) kadane's algorithm/ Maximum subarray
+- 23. Sliding Window (Basic) and 24. Two Sum (Basic Hashing)
+- 3️) Segregate 0s and 1s
+- 5️) Left Shift Array by K
+- 6) remove duplicates from sorted Array; and 7) merge sorted array
+- 9) moore's algorithm/ majority element
+- 9. Check Anagram (Core DSA Pattern)
+- 17. String to Number (atoi logic) and 1️⃣ Toggle Case of a String (ASCII Technique)
+- 2️⃣ Character Frequency Count (ASCII Frequency Arra
