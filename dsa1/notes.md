@@ -1610,4 +1610,6 @@ for (let i = 1; i <= n; i++) {
 - 9. Palindrome Check (Two-Pointer)
 - 6. Reverse Using Loop (Two-Pointer)
 - 24. Reverse a Number
+- 7. Pyramid Pattern (Very Important)
+- 11. X / Cross Pattern
 
