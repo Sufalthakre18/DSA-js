@@ -972,3 +972,12 @@ console.log(arr);
 ```
 
 ---
+
+
+## practice topics
+- 4.3 Binary Search Algorithm (Iterative)
+- 4. Bubble Sort (Beginner Friendly)
+- 5.2 Selection Sort Algorithm
+- 6.2 Insertion Sort Algorithm
+- 1. Merge Sort (MOST IMPORTANT)
+- 2. Quick Sort (INTERVIEW FAVORITE)
