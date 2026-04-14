@@ -981,3 +981,26 @@ console.log(arr);
 - 6.2 Insertion Sort Algorithm
 - 1. Merge Sort (MOST IMPORTANT)
 - 2. Quick Sort (INTERVIEW FAVORITE)
+---
+-- 2006. Count Number of Pairs With Absolute Difference K
+```
+var countKDifference = function(nums, k) {
+    let map = {};
+    let count = 0;
+
+    for (let num of nums) {
+        // check for pairs
+        if (map[num - k]) count += map[num - k];
+        if (map[num + k]) count += map[num + k];
+
+        // store current number
+        map[num] = (map[num] || 0) + 1;
+    }
+
+    return count;
+    
+};
+// Input: nums = [1,2,2,1], k = 1
+// Output: 4
+```
+  
